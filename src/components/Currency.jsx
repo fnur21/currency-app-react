@@ -34,12 +34,7 @@ function Currency() {
 
         {/*  Sağdaki select + result grubu */}
         <div className="currency-group">
-          {/* Hedef para birimi seçiliyor */}
-          <select className='to-currency-option'>
-            <option>TL</option>
-            <option>EUR</option>
-            <option>USD</option>
-          </select>
+         
 
           {/* Çeviri sonucu burada gösterilecek */}
           <input 
@@ -48,6 +43,13 @@ function Currency() {
             placeholder="Sonuç" 
             readOnly 
           />
+
+           {/* Hedef para birimi seçiliyor */}
+          <select className='to-currency-option'>
+            <option>TL</option>
+            <option>EUR</option>
+            <option>USD</option>
+          </select>
         </div>
       </div>
 
