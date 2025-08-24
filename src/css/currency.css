@@ -1,0 +1,153 @@
+/* GENEL KAPSAYICI (Ana kutu) */
+.currency-div {
+    display: flex;                      
+    flex-direction: column;             
+    align-items: center;                
+    justify-content: center;            
+    margin: 50px auto;                  
+    width: 90%;                         
+    max-width: 500px;                   
+    padding: 35px;                      
+    border-radius: 20px;                
+    border: 1px solid rgba(255,255,255,0.15); 
+    background: rgba(17, 24, 39, 0.75); 
+    backdrop-filter: blur(12px);        
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+    color: #f9fafb;                     
+    font-family: "Segoe UI", sans-serif; 
+    transition: transform 0.3s ease;
+}
+
+/* Hover ile kutuya hafif animasyon */
+.currency-div:hover {
+    transform: translateY(-4px);
+}
+
+/* BAŞLIK (Sayfanın başlığı) */
+.baslık {
+    color: #ffffff;
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 28px;
+    text-align: center;
+    text-shadow: 1px 2px 8px rgba(0,0,0,0.7); 
+    letter-spacing: 1px;
+    position: relative;
+}
+
+/* Başlığın altına şık bir çizgi */
+.baslık::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 10px auto 0;
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    border-radius: 2px;
+}
+
+/*  INPUT ve SELECT alanlarının ortak stili */
+.amount,
+.result,
+.from-currency-option,
+.to-currency-option {
+    flex: 1;
+    min-width: 120px;
+    height: 42px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.08);
+    color: #f1f5f9;
+    outline: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+/*  INPUT odaklandığında */
+.amount:focus,
+.result:focus,
+.from-currency-option:focus,
+.to-currency-option:focus {
+    border-color: #4facfe;
+    background: rgba(255,255,255,0.12);
+    box-shadow: 0 0 12px rgba(79,172,254,0.5);
+    transform: scale(1.03);
+}
+
+/*  BUTON */
+.button {
+    margin-top: 22px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+/*  BUTON Hover efekti */
+.button:hover {
+    background: linear-gradient(135deg, #00f2fe, #4facfe);
+    transform: scale(1.07);
+    box-shadow: 0 8px 20px rgba(79,172,254,0.5);
+}
+
+/* OK İKONU */
+.arrow-icon {
+    font-size: 34px;
+    color: #4facfe;
+    transition: transform 0.4s ease, color 0.3s ease;
+}
+
+.arrow-icon:hover {
+    transform: rotate(90deg);
+    color: #00f2fe;
+}
+
+/* FORM GRUPLARINI DÜZENLEMEK İÇİN */
+.currency-form {
+    display: flex;
+    flex-direction: row;    /* Yan yana dizilsin */
+    align-items: center;    /* Dikeyde ortala */
+    justify-content: center;/* Ortaya hizala */
+    gap: 20px;              /* Kutular + ikon arası boşluk */
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.currency-group {
+    display: flex;
+    flex-direction: column; /* Grup içindeki input+select alt alta */
+    gap: 10px;              /* Aralarında boşluk */
+    min-width: 140px;
+}
+
+/* RESPONSIVE Tasarım */
+@media (max-width: 600px) {
+    .currency-div {
+        padding: 25px;
+    }
+    .amount,
+    .result,
+    .from-currency-option,
+    .to-currency-option {
+        width: 100%;
+        margin: 6px 0;
+    }
+    .button {
+        width: 100%;
+    }
+    .currency-form {
+        flex-direction: column; /* Mobilde üst üste gelsin */
+        gap: 16px;
+    }
+    .currency-group {
+        width: 100%;
+    }
+}
